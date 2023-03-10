@@ -1,38 +1,51 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 /**
  * main - Main Entry
  * @argc: input
  * @argv: input
- * Return: Always 0 (Success)
- */
+ * Return: Always 0 (success)
+**/
 int main(int argc, char *argv[])
 {
-	int sum;
-	int count;
-	int i;
+int cents, coins = 0;
 
-	count = 1;
-	sum = 0;
-	if (argc == 1)
-	{
-		printf("0\n");
-		return (0);
-	}
-	while (count < argc)
-	{
-		for (i = 0; argv[count][i] != '\0'; i++)
-		{
-			if (!(isdigit(argv[count][i])))
-			{
-				printf("Error\n");
-				return (1);
-			}
-		}
-		sum += atoi(argv[count]);
-		count++;
-	}
-	printf("%d\n", sum);
-	return (0);
+if (argc == 2)
+{
+cents = atoi(*(argv + 1));
+while (cents > 0)
+{
+if (cents % 25 < cents)
+{
+cents -= 25;
+coins++;
+}
+else if (cents % 10 < cents)
+{
+cents -= 10;
+coins++;
+}
+else if (cents % 5 < cents)
+{
+cents -= 5;
+coins++;
+}
+else if (cents % 2 < cents)
+{
+cents -= 2;
+coins++;			}
+else if (cents % 1 < cents)
+{
+cents -= 1;
+coins++;
+}
+}
+}
+else
+{
+printf("Error\n");
+return (1);
+}
+printf("%d\n", coins);
+return (0);
 }
