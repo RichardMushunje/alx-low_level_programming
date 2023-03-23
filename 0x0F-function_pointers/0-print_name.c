@@ -4,9 +4,11 @@
 /**
  * print_name - prints a name as is
  * @name: name of the person
- * @f: is pointer
-**/
-
+ * @f: function pointer
+ *
+ * Description: This function takes a pointer to a function as an argument and
+ *              calls the function to print a name.
+ **/
 void print_name(char *name, void (*f)(char *))
 {
 	if (name == NULL || f == NULL)
@@ -18,3 +20,4 @@ void print_name(char *name, void (*f)(char *))
 		f(name);
 	}
 }
+
