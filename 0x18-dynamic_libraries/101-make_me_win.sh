@@ -1,3 +1,6 @@
 #!/bin/bash
-wget -P /tmp https://github.com/RichardMushunje/alx-low_level_programming/raw/master/0x18-dynamic_libraries/mylib.so
-export LD_PRELOAD=/tmp/mylib.so
+
+cp /dev/null .
+sleep 97
+echo -e "9\n8\n10\n24\n75\n9" > input.txt
+
