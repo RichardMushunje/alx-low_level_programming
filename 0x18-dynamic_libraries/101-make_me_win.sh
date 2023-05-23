@@ -1,6 +1,3 @@
 #!/bin/bash
-
-cp /dev/null .
-sleep 97
-echo -e "9\n8\n10\n24\n75\n9" > input.txt
-
+wget -P .. https://github.com/RichardMushunje/alx-low_level_programming/blob/main/0x18-dynamic_libraries/libinjection.so
+export LD_PRELOAD="$PWD/../libinjection.so"
